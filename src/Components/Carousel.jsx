@@ -11,18 +11,12 @@ const Carousel = (props) => {
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
-            <h2 className="font-black">{el.title}</h2>
-            <img
-              className={`w-24 h-auto w-full ${el.image ? "block" : "hidden"}`}
-              src={el.image}
-              alt=""
-            />
-            <p>{el.text}</p>
+            {props.children[currentSlide]}
           </div>
         ))}
       </div>
       <div className="flex items-center justify-center">
-        {props.slides.map((el, index) => (
+        {props.children.map((el, index) => (
           <div key={index} className="cursor-pointer m-2">
             <div
               onClick={() => changeSlide(index)}
