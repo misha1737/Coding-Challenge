@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Header from "./Components/Header";
+import Carousel from "./Components/Carousel";
 function App() {
+  const slides = [
+    {
+      image: null,
+      title: "First Slide",
+      text:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ",
+    },
+    {
+      image: "./logo.svg",
+      title: null,
+      text: null,
+    },
+    {
+      image: "./tailwindcss.svg",
+      title: "The third slide",
+      text: null,
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <div className="flex  items-center justify-center">
+        <Carousel slides={slides} />
+      </div>
     </div>
   );
 }
